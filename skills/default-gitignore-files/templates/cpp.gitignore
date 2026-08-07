@@ -1,0 +1,49 @@
+# ---- Build output ----
+build/
+out/
+cmake-build-*/
+bin/
+Debug/
+Release/
+x64/
+x86/
+
+# ---- Compiled objects / binaries ----
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.pdb
+*.ilk
+
+# ---- CMake ----
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# ---- Environment / secrets ----
+.env
+.env.local
+
+# ---- Editor / IDE ----
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Debug / profiling ----
+*.dSYM/
+core

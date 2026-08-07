@@ -1,0 +1,45 @@
+# ---- Bundler ----
+/.bundle/
+/vendor/bundle/
+/lib/bundler/man/
+
+# ---- Build output / gems ----
+/pkg/
+*.gem
+
+# ---- Rails-specific (harmless if not a Rails app) ----
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/public/assets
+/public/packs
+/public/packs-test
+/storage/
+/node_modules/
+
+# ---- Testing / coverage ----
+/coverage/
+/spec/reports/
+.rspec_status
+
+# ---- Environment / secrets ----
+.env
+.env.local
+/config/master.key
+/config/credentials/*.key
+
+# ---- Editor / IDE ----
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Misc ----
+*.orig
+.byebug_history

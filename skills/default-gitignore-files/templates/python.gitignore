@@ -1,0 +1,57 @@
+# ---- Byte-compiled / cache files ----
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ---- Distribution / packaging ----
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# ---- Virtual environments ----
+.venv/
+venv/
+env/
+ENV/
+
+# ---- Environment / secrets ----
+.env
+.env.local
+
+# ---- Testing / coverage ----
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+
+# ---- Type checking / linting caches ----
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.pytype/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- Editor / IDE ----
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Package managers ----
+pip-log.txt
+pip-delete-this-directory.txt
+poetry.lock.bak

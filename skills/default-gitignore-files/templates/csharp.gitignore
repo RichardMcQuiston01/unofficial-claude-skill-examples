@@ -1,0 +1,48 @@
+# ---- Build output ----
+bin/
+obj/
+out/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+
+# ---- Visual Studio ----
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ---- NuGet ----
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+# ---- Testing / coverage ----
+TestResults/
+[Cc]overage/
+*.trx
+
+# ---- Environment / secrets ----
+.env
+.env.local
+appsettings.*.json
+!appsettings.json
+!appsettings.Development.json
+
+# ---- Editor / IDE ----
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Publish / logs ----
+*.publish.xml
+*.log

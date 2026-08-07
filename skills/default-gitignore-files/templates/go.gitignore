@@ -1,0 +1,42 @@
+# ---- Compiled binaries ----
+/bin/
+/dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# ---- Test binaries and output ----
+*.test
+*.out
+coverage.txt
+coverage.html
+
+# ---- Go build/vendor artifacts ----
+vendor/
+/tmp/
+
+# ---- Go workspace / module files (keep go.mod and go.sum tracked) ----
+go.work
+go.work.sum
+
+# ---- Environment / secrets ----
+.env
+.env.local
+
+# ---- Editor / IDE ----
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Debug / profiling ----
+*.pprof
+debug
+__debug_bin*
