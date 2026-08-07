@@ -1,0 +1,46 @@
+# ---- Build output ----
+.build/
+DerivedData/
+build/
+
+# ---- Xcode ----
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+xcuserdata/
+*.moved-aside
+*.xcuserstate
+
+# ---- Swift Package Manager ----
+.swiftpm/
+Package.resolved
+
+# ---- CocoaPods (harmless if not used) ----
+Pods/
+
+# ---- Carthage (harmless if not used) ----
+Carthage/Build/
+
+# ---- Environment / secrets ----
+.env
+.env.local
+
+# ---- Testing / coverage ----
+*.gcno
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# ---- Editor / IDE ----
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# ---- OS ----
+.DS_Store
+Thumbs.db

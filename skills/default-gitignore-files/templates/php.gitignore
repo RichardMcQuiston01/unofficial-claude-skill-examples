@@ -1,0 +1,41 @@
+# ---- Dependencies ----
+/vendor/
+composer.phar
+
+# ---- Build output ----
+/build/
+/dist/
+
+# ---- Laravel-specific (harmless if not a Laravel app) ----
+/node_modules/
+/public/hot
+/public/storage
+/storage/*.key
+/bootstrap/cache/*
+!/bootstrap/cache/.gitkeep
+
+# ---- Testing / coverage ----
+/coverage/
+.phpunit.result.cache
+.phpunit.cache/
+
+# ---- Environment / secrets ----
+.env
+.env.local
+.env.*.local
+
+# ---- Logs ----
+*.log
+/storage/logs/*
+!/storage/logs/.gitkeep
+
+# ---- Editor / IDE ----
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
