@@ -1,4 +1,8 @@
-# EXAMPLE CLAUDE SKILLS
+# UNOFFICIAL CLAUDE SKILL EXAMPLES
+
+```
+Disclaimer: This is an independent, unofficial project (see the "unofficial-" prefix in the name) and is not affiliated with, endorsed by, or sponsored by Anthropic or Claude. "Claude" is a trademark of Anthropic, PBC, used here only in a descriptive, nominative sense to indicate compatibility — not to imply any official status.
+```
 
 ## Overview
 
@@ -15,7 +19,7 @@ Skills in this repo fall into a few broad groups:
 
 ## List of Skills
 
-See [skills/LIST_OF_SKILLS.md](skills/LIST_OF_SKILLS.md) for the full table of available skills.
+See [/skills/LIST_OF_SKILLS.md](skills/LIST_OF_SKILLS.md) for the full table of available skills.
 
 ## Installation
 
@@ -26,7 +30,7 @@ Skills are just a folder containing a `SKILL.md` file (plus any supporting files
 - **Personal** (available in every project on your machine): `~/.claude/skills/<skill-name>/SKILL.md`
 - **Project** (committed to git, shared with your team): `.claude/skills/<skill-name>/SKILL.md` in the project root
 
-To use a skill from this repo with Claude Code, copy its folder from `skills/` into one of the locations above.
+To use a skill from this repo with Claude Code, copy its folder from `skills/` into one of the locations above — or use the [helper scripts](#scripts) below to do it for you.
 
 **Claude Desktop and Claude.ai (web)** don't read from the filesystem — custom skills are uploaded as a zip file through the app itself (see [Usage](#usage) below).
 
@@ -41,7 +45,7 @@ To use a skill from this repo with Claude Code, copy its folder from `skills/` i
 1. Enable code execution first: **Settings > Capabilities** and turn on "Code execution and file creation" (Team/Enterprise: **Organization settings > Skills**, enabling both "Code execution and file creation" and "Skills").
 2. Go to **Customize > Skills** in the left sidebar.
 3. Click the **+** button.
-4. Choose **Browse skills** to install a skill from Anthropic's directory, or **Upload a skill** to add one from this repo — zip the skill's folder first (e.g. `zip -r api-conventions.zip api-conventions/`), since skills here are tracked as plain folders, not pre-packaged archives.
+4. Choose **Browse skills** to install a skill from Anthropic's directory, or **Upload a skill** to add one from this repo — package the skill's folder into a `.skill` zip first (e.g. `scripts/bash/package-skill.sh api-conventions`, see [Scripts](#scripts) below), since skills here are tracked as plain folders, not pre-packaged archives.
 5. Newly installed/uploaded skills are enabled by default; toggle them off if you don't want Claude to use them automatically.
 
 ### Web App
@@ -49,14 +53,26 @@ To use a skill from this repo with Claude Code, copy its folder from `skills/` i
 Same flow as the Desktop app, from [claude.ai](https://claude.ai):
 
 1. Make sure code execution is enabled (**Settings > Capabilities**, or **Settings > Features** on some accounts).
-2. Go to **Customize > Skills**, click **+**, then **Upload a skill** and select a zip of the skill's folder (zip it yourself first — see the Desktop App step above).
+2. Go to **Customize > Skills**, click **+**, then **Upload a skill** and select a zip of the skill's folder (package it yourself first — see the Desktop App step above).
 3. The skill appears in your skills list, enabled by default. Skills you upload this way are private to your account.
 
 ### Claude Code
 
-1. Copy a skill's folder from this repo's `skills/` directory into `~/.claude/skills/` (personal, all projects) or `<project>/.claude/skills/` (project-level, shared via git).
+1. Copy a skill's folder from this repo's `skills/` directory into `~/.claude/skills/` (personal, all projects) or `<project>/.claude/skills/` (project-level, shared via git) — or use the [helper scripts](#scripts) below.
 2. Claude invokes a skill automatically when its `SKILL.md` `description` frontmatter matches what you're doing, or you can invoke it directly with `/<skill-name>`.
 3. Some skills accept arguments passed after the name (e.g. `/deploy staging`), available inside the skill via `$ARGUMENTS` — none of the skills in this repo currently use that.
+
+## Scripts
+
+`scripts/bash/` and `scripts/powershell/` contain equivalent Bash and PowerShell helpers for the manual steps above. Each accepts one or more skill names, or `--all`/`-All` to target every skill under `skills/`. Bash scripts are executable (`chmod +x` already applied); PowerShell scripts may need `Set-ExecutionPolicy -Scope Process Bypass` (or equivalent) to run.
+
+| Script                                 | Purpose                                                                                                         | Usage                                                            |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `package-skill.sh` / `.ps1`            | Package skill folder(s) into `.skill` zip archives, for uploading to Desktop/Claude.ai. Default output: `out/`. | `package-skill.sh [-o dir] (name... or --all)`                   |
+| `install-skill-to-project.sh` / `.ps1` | Copy skill(s) into `<project>/.claude/skills/`.                                                                 | `install-skill-to-project.sh -d project-path (name... or --all)` |
+| `install-skill-to-user.sh` / `.ps1`    | Copy skill(s) into your personal `~/.claude/skills/`.                                                           | `install-skill-to-user.sh (name... or --all)`                    |
+
+The two install scripts prompt before overwriting a skill that's already installed at the destination.
 
 ## Support
 
@@ -79,3 +95,8 @@ If this library saved you some reverse-engineering, consider [buying me a coffee
 ## Copyright
 
 (c)2026 Richard McQuiston. All Rights Reserved.
+
+This copyright applies to the original code and content of this project only.
+
+It does not extend to, and no license is granted for, use of the "Claude"
+name or any Anthropic trademarks, which remain the property of Anthropic, PBC.
